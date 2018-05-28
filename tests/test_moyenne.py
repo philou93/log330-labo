@@ -8,17 +8,17 @@ def before_test():
 
 # Les fonctions de test doit debuter par test_
 # On verifie si une erreur est lancé si la liste des nombres est vide et on divise par 0
-def test_CT1():
+def test_CT7():
     before_test()
-    mean = mmm.mean(numbers)
-    assert mmm.variance(numbers,mean) > 391417
+    assert mmm.mean(numbers) > 638
 
-def test_CT2():
-    before_test()
-    mean = mmm.mean(numbers)
-    assert mmm.variance(numbers,mean) < 391418
 
-def test_CT3():
+def test_CT8():
     before_test()
-    mean = mmm.mean(numbers)
-    assert mmm.variance(numbers,mean) != 5656
+    assert mmm.mean(numbers) < 639
+
+
+
+def test_CT8():
+    before_test()
+    assert mmm.mean(numbers) != 5656

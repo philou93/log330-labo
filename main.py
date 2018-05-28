@@ -1,4 +1,4 @@
-from MyMathModule.MyMathModule import MyMathModule as mmm
+from MyMathModule import MyMathModule as mmm
 
 
 numbers = mmm.read_csv_data_to_float("test2.csv")
