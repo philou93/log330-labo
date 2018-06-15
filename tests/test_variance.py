@@ -7,14 +7,14 @@ from my_math_module import my_math_module as mmm
 def test_CT1():
     numbers = [186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601]
     mean = mmm.mean(numbers)
-    assert mmm.variance(numbers,mean) > 391417
+    assert mmm.variance(numbers, mean) > 391417
 
 def test_CT2():
     numbers = [186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601]
     mean = mmm.mean(numbers)
-    assert mmm.variance(numbers,mean) < 391418
+    assert mmm.variance(numbers, mean) < 391418
 
 def test_CT3():
     numbers = [186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601]
     mean = mmm.mean(numbers)
-    assert mmm.variance(numbers,mean) != 5656
+    assert mmm.variance(numbers, mean) != 5656

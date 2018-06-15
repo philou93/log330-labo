@@ -7,17 +7,17 @@ from my_math_module import my_math_module as mmm
 def test_CT4():
     numbers = [186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601]
     mean = mmm.mean(numbers)
-    var = mmm.variance(numbers,mean)
+    var = mmm.variance(numbers ,mean)
     assert mmm.std_derivation(var) > 625
 
 def test_CT5():
     numbers = [186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601]
     mean = mmm.mean(numbers)
-    var = mmm.variance(numbers,mean)
+    var = mmm.variance(numbers, mean)
     assert mmm.std_derivation(var) < 626
 
 def test_CT6():
     numbers = [186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601]
     mean = mmm.mean(numbers)
-    var = mmm.variance(numbers,mean)
+    var = mmm.variance(numbers, mean)
     assert mmm.std_derivation(var) != 625.1
