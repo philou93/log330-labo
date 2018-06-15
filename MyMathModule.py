@@ -102,4 +102,3 @@ class MyMathModule:
         else:
             return "Très forte à parfaite"
 
-

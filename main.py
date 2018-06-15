@@ -16,3 +16,4 @@ numbers = mr.read_csv_data_to_float("test_tp2.csv")
 corelation = mmm.caculateCorelation(numbers)
 print("corrélation: {:0.6f}".format(corelation))
 print(mmm.interpreteCorelationInWord(corelation))
+
