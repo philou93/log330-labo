@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Nom module: main
+Auteur: Philippe Audet-Fortin
+Date 15 juin 2018
+Description: Main des tp.
+"""
 from my_math_module import my_math_module as mmm
 from Reader import MyReader as mr
 
@@ -16,4 +23,3 @@ numbers = mr.read_csv_data_to_float("test_tp2.csv")
 corelation = mmm.caculate_corelation(numbers)
 print("corrélation: {:0.6f}".format(corelation))
 print(mmm.interprete_corelation_in_word(corelation))
-

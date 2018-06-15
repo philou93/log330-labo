@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Nom module: my_math_module
+Auteur: Philippe Audet-Fortin
+Date 15 juin 2018
+Description: Amat de fonction mathématique.
+"""
 import math
 
 
@@ -23,7 +30,7 @@ class my_math_module:
     def pow(number, power):
         """ Retourne la valeur d'un nombre exposant un entier. """
         result = 1
-        for i in range(0, power):
+        for _ in range(0, power):
             result *= number
         return result
 
@@ -37,8 +44,8 @@ class my_math_module:
     def mean(numbers):
         """ Retourne la moyenne d'une liste de nombres passée en paramètre. """
         xsum = 0
-        for n in numbers:
-            xsum += n
+        for num in numbers:
+            xsum += num
         return xsum/len(numbers)
 
     @staticmethod
@@ -98,8 +105,7 @@ class my_math_module:
         """ Retourne la valeur absolue. """
         if value >= 0:
             return value
-        else:
-            return value * (-1)
+        return value*(-1)
 
     @staticmethod
     def interprete_corelation_in_word(corelation):
@@ -113,6 +119,4 @@ class my_math_module:
             return "Moyenne à forte"
         elif abs_cor < 0.9:
             return "Forte à très forte"
-        else:
-            return "Très forte à parfaite"
-
+        return "Très forte à parfaite"
