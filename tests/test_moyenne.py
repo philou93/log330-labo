@@ -1,5 +1,5 @@
 import pytest
-from MyMathModule import MyMathModule as mmm
+from my_math_module import my_math_module as mmm
 
 
 # Les fonctions de test doit debuter par test_

@@ -1,4 +1,4 @@
-from MyMathModule import MyMathModule as mmm
+from my_math_module import my_math_module as mmm
 from Reader import MyReader as mr
 
 
@@ -13,7 +13,7 @@ from Reader import MyReader as mr
 
 # Partie pour le TP2
 numbers = mr.read_csv_data_to_float("test_tp2.csv")
-corelation = mmm.caculateCorelation(numbers)
+corelation = mmm.caculate_corelation(numbers)
 print("corrélation: {:0.6f}".format(corelation))
-print(mmm.interpreteCorelationInWord(corelation))
+print(mmm.interprete_corelation_in_word(corelation))
 
