@@ -15,7 +15,7 @@ class my_math_module:
         moyenne passée en paramètre. """
         sum_distance = 0
         for elem in numbers:
-            sum_distance += MyMathModule.distance(elem, mean)
+            sum_distance += my_math_module.distance(elem, mean)
         return sum_distance/(len(numbers)-1)
         # Si echantillon on fait n-1
 
@@ -31,7 +31,7 @@ class my_math_module:
     def distance(number, mean):
         """ Retourne la différence au carré entre deux nombres. """
         dist = mean - number
-        return MyMathModule.pow(dist, 2)
+        return my_math_module.pow(dist, 2)
 
     @staticmethod
     def mean(numbers):
@@ -46,23 +46,23 @@ class my_math_module:
         """ Calcule la corrélation entre les valeurs d'une liste de paires. """
         number_of_row = len(entry_list)
 
-        summation_xy = MyMathModule.summation_of_multiplication_of_list_elem(
+        summation_xy = my_math_module.summation_of_multiplication_of_list_elem(
             entry_list)
-        summation_x = MyMathModule.summation_of_list_elem_at(entry_list, 0)
-        summation_y = MyMathModule.summation_of_list_elem_at(entry_list, 1)
+        summation_x = my_math_module.summation_of_list_elem_at(entry_list, 0)
+        summation_y = my_math_module.summation_of_list_elem_at(entry_list, 1)
 
         numerator = number_of_row*summation_xy - summation_x*summation_y
 
-        summation_x_to_sqr = MyMathModule.\
+        summation_x_to_sqr = my_math_module.\
             summation_of_list_with_elem_at_to_square(entry_list, 0)
-        summation_y_to_sqr = MyMathModule.\
+        summation_y_to_sqr = my_math_module.\
             summation_of_list_with_elem_at_to_square(entry_list, 1)
 
 
         denominator_part_x = number_of_row*summation_x_to_sqr \
-                             - MyMathModule.pow(summation_x, 2)
+                             - my_math_module.pow(summation_x, 2)
         denominator_part_y = number_of_row*summation_y_to_sqr \
-                             - MyMathModule.pow(summation_y, 2)
+                             - my_math_module.pow(summation_y, 2)
 
         denominator = math.sqrt(denominator_part_x*denominator_part_y)
 
@@ -90,7 +90,7 @@ class my_math_module:
         """ Fait la sommation d'un des deux nombre au carré dans la paire. """
         summation_to_square = 0
         for row in list_xy:
-            summation_to_square += MyMathModule.pow(row[pos], 2)
+            summation_to_square += my_math_module.pow(row[pos], 2)
         return summation_to_square
 
     @staticmethod
@@ -104,7 +104,7 @@ class my_math_module:
     @staticmethod
     def interprete_corelation_in_word(corelation):
         """ Renvoit une intéprétation litéraire de la corrélation. """
-        abs_cor = MyMathModule.abs_value(corelation)
+        abs_cor = my_math_module.abs_value(corelation)
         if abs_cor < 0.2:
             return "Nulle à faible"
         elif abs_cor < 0.4:
