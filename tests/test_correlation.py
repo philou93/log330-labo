@@ -1,8 +1,7 @@
 import pytest
 from my_math_module import my_math_module as mmm
 
-numbers = [10
-           [186, 15],
+numbers = [[186, 15],
            [699, 69.9],
            [132, 6.5],
            [272, 22.4],
