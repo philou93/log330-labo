@@ -41,6 +41,7 @@ def ask_for_y_value(slope, const):
 
 
 numbers = mr.read_csv_data("test_tp3.csv")
+print(numbers)
 slope = mmm.calculate_slope(numbers)
 const = mmm.calculate_const(numbers, slope)
 print("slope: {:8.6f}".format(slope))
