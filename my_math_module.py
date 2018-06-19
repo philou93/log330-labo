@@ -48,6 +48,8 @@ class my_math_module:
             xsum += num
         return xsum/len(numbers)
 
+
+    # Ajout TP2
     @staticmethod
     def caculate_corelation(entry_list):
         """ Calcule la corrélation entre les valeurs d'une liste de paires. """
@@ -120,3 +122,44 @@ class my_math_module:
         elif abs_cor < 0.9:
             return "Forte à très forte"
         return "Très forte à parfaite"
+
+
+    # Ajout TP3
+    @staticmethod
+    def calculate_slope(entry_list):
+        """ Calcule la pente de la regression linéaire. """
+        number_of_row = len(entry_list)
+
+        summation_xy = \
+            my_math_module.summation_of_multiplication_of_list_elem(entry_list)
+        list_x = my_math_module.get_all_elem_in_list_at(entry_list, 0)
+        list_y = my_math_module.get_all_elem_in_list_at(entry_list, 1)
+        mean_x = my_math_module.mean(list_x)
+        mean_y = my_math_module.mean(list_y)
+        numerator = summation_xy - (number_of_row*mean_x*mean_y)
+
+        summation_x_to_sqrt = \
+            my_math_module.summation_of_list_with_elem_at_to_square(entry_list
+                                                                    , 0)
+        mean_x_to_sqrt = my_math_module.pow(mean_x, 2)
+        denominator = summation_x_to_sqrt - (number_of_row*mean_x_to_sqrt)
+        return numerator/denominator
+
+    @staticmethod
+    def calculate_const(entry_list, slope):
+        """ Calcule la constante B0 d'une regression linéaire. """
+        list_x = my_math_module.get_all_elem_in_list_at(entry_list, 0)
+        list_y = my_math_module.get_all_elem_in_list_at(entry_list, 1)
+        mean_x = my_math_module.mean(list_x)
+        mean_y = my_math_module.mean(list_y)
+        return mean_y - (slope*mean_x)
+
+    @staticmethod
+    def get_all_elem_in_list_at(list_xy, pos):
+        """ Retourne les element a la position pos d'une liste d'élément """
+        new_list = []
+        for ele in list_xy:
+            new_list.append(ele[pos])
+        return new_list
+
+

@@ -4,7 +4,7 @@ import csv
 class MyReader:
 
     @staticmethod
-    def read_csv_data_to_float(file):
+    def read_csv_data(file):
         numbers = []
         header_readed = False
         with open(file, 'r') as csv_file:
@@ -18,3 +18,8 @@ class MyReader:
                 else:
                     numbers.append(float(row.replace(',', '.')))
         return numbers
+
+    @staticmethod
+    def get_user_input(msg):
+        value = input(msg)
+        return value
