@@ -14,14 +14,14 @@ numbers = [[186, 15],
            ]
 
 def test_CT10():
-    assert mmm.caculate_corelation(numbers) > 0.9558
+    assert mmm.caculate_correlation(numbers) > 0.9558
 
 def test_CT11():
-    assert mmm.caculate_corelation(numbers) < 0.9560
+    assert mmm.caculate_correlation(numbers) < 0.9560
 
 def test_CT12():
     try:
-        mmm.caculate_corelation([])
+        mmm.caculate_correlation([])
         assert False
     except:
         assert True

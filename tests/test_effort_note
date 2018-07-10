@@ -4,17 +4,17 @@ from Reader import MyReader as mr
 
 
 data = mr.read_csv_data("test_tp4.csv", 2, 1)
-numbers = mr.interpret_data_for_tp4(data, 6)
+numbers = mr.interpret_data_for_hours_and_result(data, 6)
 
 def test_CT16():
-    assert mmm.caculate_corelation(numbers) > 0.155215
+    assert mmm.caculate_correlation(numbers) > 0.155215
 
 def test_CT17():
-    assert mmm.caculate_corelation(numbers) < 0.155217
+    assert mmm.caculate_correlation(numbers) < 0.155217
 
 def test_CT18():
     try:
-        mmm.caculate_corelation([])
+        mmm.caculate_correlation([])
         assert False
     except:
         assert True
