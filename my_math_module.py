@@ -11,6 +11,9 @@ import math
 class my_math_module:
     """ Module mathématique avec divers fonctions. """
 
+    def __init__(self):
+        pass
+
     @staticmethod
     def std_derivation(variance):
         """ Retourne la racine carree d'une valeur. """
@@ -51,7 +54,7 @@ class my_math_module:
 
     # Ajout TP2
     @staticmethod
-    def caculate_corelation(entry_list):
+    def caculate_correlation(entry_list):
         """ Calcule la corrélation entre les valeurs d'une liste de paires. """
         number_of_row = len(entry_list)
 
@@ -110,9 +113,9 @@ class my_math_module:
         return value*(-1)
 
     @staticmethod
-    def interprete_corelation_in_word(corelation):
+    def interprete_correlation_in_word(correlation):
         """ Renvoit une intéprétation litéraire de la corrélation. """
-        abs_cor = my_math_module.abs_value(corelation)
+        abs_cor = my_math_module.abs_value(correlation)
         if abs_cor < 0.2:
             return "Nulle à faible"
         elif abs_cor < 0.4:
