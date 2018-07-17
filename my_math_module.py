@@ -6,6 +6,7 @@ Date 15 juin 2018
 Description: Amat de fonction mathématique.
 """
 import math
+from Reader import MyReader as mr
 
 
 class my_math_module:
@@ -165,4 +166,55 @@ class my_math_module:
             new_list.append(ele[pos])
         return new_list
 
+    #Ajout tp5
+    @staticmethod
+    def variance_with_regression(numbers, slope, const):
+        """ Calculer la variance et utilise la distance entre la valeur y et
+            la regression lineaire associée à cette valeur. """
+        sum_distance = 0
+        for elem_x, elem_y in numbers:
+            y_reg = const + elem_x * slope
+            dist = my_math_module.distance(elem_y, y_reg)
+            sum_distance += dist
+        return sum_distance / (len(numbers) - 1)
 
+    @staticmethod
+    def get_student():
+        """ Fonction pour demander à l'usager le niveau de confiance qu'il souhaite
+            pour student et qui retourne la valeur de student associée. """
+        answ = mr.get_user_input("Choisissez la valeur du alpha désiré: "
+                                 "\n\tAppuyer \n\t\t 1 pour alpha = 0.7 "
+                                 "\n\t\t 2 pour alpha = 0.9")
+        if answ == "1":
+            print("alpha = {:0.3f}".format(1.108))
+            return 1.108
+        elif answ == "2":
+            print("alpha = {:0.3f}".format(1.860))
+            return 1.860
+        else:
+            raise Exception("Mauvais choix.")
+
+    @staticmethod
+    def distance_with_mean(numbers, mean):
+        """ Retourne la variace par rapport à une liste de nombre et une
+        moyenne passée en paramètre. """
+        sum_distance = 0
+        for elem in numbers:
+            sum_distance += my_math_module.distance(elem, mean)
+        return sum_distance
+
+    @staticmethod
+    def calculate_interval(x_k, numbers, std_dev, student_val):
+        """ Fonction pour le calcule de l'intervalle """
+        list_x = my_math_module.get_all_elem_in_list_at(numbers, 0)
+        mean_x = my_math_module.mean(list_x)
+        numerator = my_math_module.pow(x_k - mean_x, 2)
+        denominator = my_math_module.distance_with_mean(list_x, mean_x)
+        part_1 = student_val*std_dev
+        part_2 = math.sqrt(numerator/denominator + 1 + 1/len(list_x))
+        return part_1*part_2
+
+    @staticmethod
+    def get_bounds_interval(interval, y_k):
+        """ Calcul les limite de l'intervalle. """
+        return [y_k + interval, y_k - interval]

@@ -60,7 +60,24 @@ def tp4():
     desc = mmm.interprete_correlation_in_word(corelation)
     print(desc)
 
+def  tp5():
+    """ Fonction pour le tp5 """
+    numbers = mr.read_csv_data("test_tp5.csv")
+    xk = float(mr.get_user_input("Quelle valeur voulez-vous chercher l'intervalle de confiance?"))
+    slope = mmm.calculate_slope(numbers)
+    const = mmm.calculate_const(numbers, slope)
+    variance = mmm.variance_with_regression(numbers, slope, const)
+    std_dev = mmm.std_derivation(variance)
+    student_val = mmm.get_student()
+    interval = mmm.calculate_interval(xk, numbers, std_dev, student_val)
+    yk = const + xk*slope
+    bounds = mmm.get_bounds_interval(interval, yk)
+    print("Intevalle = {:0.6f}".format(interval))
+    print("Limite supérieure = {:0.6f}".format(bounds[0]))
+    print("Limite inférieure = {:0.6f}".format(bounds[1]))
+
 #tp1()
 #tp2()
 #tp3()
-tp4()
+#tp4()
+tp5()

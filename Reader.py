@@ -28,6 +28,7 @@ class MyReader:
 
     @staticmethod
     def interpret_data_for_hours_and_result(data, nb_x):
+        """ Fait la sommation des heures d'étude pour chaque étudiant. """
         numbers = []
         for row in data:
             summation = 0
