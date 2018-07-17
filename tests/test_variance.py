@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import pytest
 from my_math_module import my_math_module as mmm
 

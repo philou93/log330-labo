@@ -3,14 +3,14 @@
 Nom module: my_math_module
 Auteur: Philippe Audet-Fortin
 Date 15 juin 2018
-Description: Amat de fonction mathématique.
+Description: Amat de fonction mathematique.
 """
 import math
 from Reader import MyReader as mr
 
 
 class my_math_module:
-    """ Module mathématique avec divers fonctions. """
+    """ Module mathematique avec divers fonctions. """
 
     def __init__(self):
         pass
@@ -22,8 +22,8 @@ class my_math_module:
 
     @staticmethod
     def variance(numbers, mean):
-        """ Retourne la variace par rapport à une liste de nombre et une
-        moyenne passée en paramètre. """
+        """ Retourne la variace par rapport a une liste de nombre et une
+        moyenne passee en parametre. """
         sum_distance = 0
         for elem in numbers:
             sum_distance += my_math_module.distance(elem, mean)
@@ -40,13 +40,13 @@ class my_math_module:
 
     @staticmethod
     def distance(number, mean):
-        """ Retourne la différence au carré entre deux nombres. """
+        """ Retourne la difference au carre entre deux nombres. """
         dist = mean - number
         return my_math_module.pow(dist, 2)
 
     @staticmethod
     def mean(numbers):
-        """ Retourne la moyenne d'une liste de nombres passée en paramètre. """
+        """ Retourne la moyenne d'une liste de nombres passee en parametre. """
         xsum = 0
         for num in numbers:
             xsum += num
@@ -56,7 +56,7 @@ class my_math_module:
     # Ajout TP2
     @staticmethod
     def caculate_correlation(entry_list):
-        """ Calcule la corrélation entre les valeurs d'une liste de paires. """
+        """ Calcule la correlation entre les valeurs d'une liste de paires. """
         number_of_row = len(entry_list)
 
         summation_xy = my_math_module.summation_of_multiplication_of_list_elem(
@@ -83,8 +83,8 @@ class my_math_module:
 
     @staticmethod
     def summation_of_multiplication_of_list_elem(list_xy):
-        """ Fait la sommation des nultiplications d'une liste de paire passée
-        en paramètre. """
+        """ Fait la sommation des nultiplications d'une liste de paire passee
+        en parametre. """
         summation_xy = 0
         for row in list_xy:
             summation_xy += row[0] * row[1]
@@ -100,7 +100,7 @@ class my_math_module:
 
     @staticmethod
     def summation_of_list_with_elem_at_to_square(list_xy, pos):
-        """ Fait la sommation d'un des deux nombre au carré dans la paire. """
+        """ Fait la sommation d'un des deux nombre au carre dans la paire. """
         summation_to_square = 0
         for row in list_xy:
             summation_to_square += my_math_module.pow(row[pos], 2)
@@ -115,23 +115,23 @@ class my_math_module:
 
     @staticmethod
     def interprete_correlation_in_word(correlation):
-        """ Renvoit une intéprétation litéraire de la corrélation. """
+        """ Renvoit une intepretation literaire de la correlation. """
         abs_cor = my_math_module.abs_value(correlation)
         if abs_cor < 0.2:
-            return "Nulle à faible"
+            return "Nulle a faible"
         elif abs_cor < 0.4:
-            return "Faible à moyenne"
+            return "Faible a moyenne"
         elif abs_cor < 0.7:
-            return "Moyenne à forte"
+            return "Moyenne a forte"
         elif abs_cor < 0.9:
-            return "Forte à très forte"
-        return "Très forte à parfaite"
+            return "Forte a tres forte"
+        return "Tres forte a parfaite"
 
 
     # Ajout TP3
     @staticmethod
     def calculate_slope(entry_list):
-        """ Calcule la pente de la regression linéaire. """
+        """ Calcule la pente de la regression lineaire. """
         number_of_row = len(entry_list)
 
         summation_xy = \
@@ -151,7 +151,7 @@ class my_math_module:
 
     @staticmethod
     def calculate_const(entry_list, slope):
-        """ Calcule la constante B0 d'une regression linéaire. """
+        """ Calcule la constante B0 d'une regression lineaire. """
         list_x = my_math_module.get_all_elem_in_list_at(entry_list, 0)
         list_y = my_math_module.get_all_elem_in_list_at(entry_list, 1)
         mean_x = my_math_module.mean(list_x)
@@ -160,7 +160,7 @@ class my_math_module:
 
     @staticmethod
     def get_all_elem_in_list_at(list_xy, pos):
-        """ Retourne les element a la position pos d'une liste d'élément """
+        """ Retourne les element a la position pos d'une liste d'element """
         new_list = []
         for ele in list_xy:
             new_list.append(ele[pos])
@@ -170,7 +170,7 @@ class my_math_module:
     @staticmethod
     def variance_with_regression(numbers, slope, const):
         """ Calculer la variance et utilise la distance entre la valeur y et
-            la regression lineaire associée à cette valeur. """
+            la regression lineaire associee a cette valeur. """
         sum_distance = 0
         for elem_x, elem_y in numbers:
             y_reg = const + elem_x * slope
@@ -180,9 +180,9 @@ class my_math_module:
 
     @staticmethod
     def get_student():
-        """ Fonction pour demander à l'usager le niveau de confiance qu'il souhaite
-            pour student et qui retourne la valeur de student associée. """
-        answ = mr.get_user_input("Choisissez la valeur du alpha désiré: "
+        """ Fonction pour demander a l'usager le niveau de confiance qu'il souhaite
+            pour student et qui retourne la valeur de student associee. """
+        answ = mr.get_user_input("Choisissez la valeur du alpha desire: "
                                  "\n\tAppuyer \n\t\t 1 pour alpha = 0.7 "
                                  "\n\t\t 2 pour alpha = 0.9")
         if answ == "1":
@@ -196,8 +196,8 @@ class my_math_module:
 
     @staticmethod
     def distance_with_mean(numbers, mean):
-        """ Retourne la variace par rapport à une liste de nombre et une
-        moyenne passée en paramètre. """
+        """ Retourne la variace par rapport a une liste de nombre et une
+        moyenne passee en parametre. """
         sum_distance = 0
         for elem in numbers:
             sum_distance += my_math_module.distance(elem, mean)

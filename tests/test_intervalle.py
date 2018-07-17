@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import pytest
 from my_math_module import my_math_module as mmm
-
+import Reader
 
 numbers = [[130, 186],
             [650, 699],
@@ -22,7 +24,7 @@ def test_CT19():
     variance = mmm.variance_with_regression(numbers, slope, const)
     std_dev = mmm.std_derivation(variance)
     student_val = 1.860
-    assert mmm.calculate_interval(xk, numbers, std_dev, student_val) > 439.5455323
+    assert mmm.calculate_interval(xk, numbers, std_dev, student_val) > 439.545323
 
 
 def test_CT20():
@@ -36,9 +38,6 @@ def test_CT20():
 
 
 def test_CT21():
-    mmm.input = lambda: '2'
+    mr = Reader.MyReader()
+    mr.get_user_input = lambda x: '2'
     assert mmm.get_student() == 1.860
-
-
-def teardown_method(self):
-    mmm.input = input
