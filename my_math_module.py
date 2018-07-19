@@ -168,7 +168,7 @@ class my_math_module:
 
     #Ajout tp5
     @staticmethod
-    def variance_with_regression(numbers, slope, const):
+    def calculate_variance_with_regression(numbers, slope, const):
         """ Calculer la variance et utilise la distance entre la valeur y et
             la regression lineaire associee a cette valeur. """
         sum_distance = 0
@@ -179,7 +179,7 @@ class my_math_module:
         return sum_distance / (len(numbers) - 1)
 
     @staticmethod
-    def get_student():
+    def get_student_with_alpha():
         """ Fonction pour demander a l'usager le niveau de confiance qu'il souhaite
             pour student et qui retourne la valeur de student associee. """
         answ = mr.get_user_input("Choisissez la valeur du alpha desire: "
@@ -195,7 +195,7 @@ class my_math_module:
             raise Exception("Mauvais choix.")
 
     @staticmethod
-    def distance_with_mean(numbers, mean):
+    def calculate_distance_with_mean(numbers, mean):
         """ Retourne la variace par rapport a une liste de nombre et une
         moyenne passee en parametre. """
         sum_distance = 0
@@ -208,13 +208,13 @@ class my_math_module:
         """ Fonction pour le calcule de l'intervalle """
         list_x = my_math_module.get_all_elem_in_list_at(numbers, 0)
         mean_x = my_math_module.mean(list_x)
-        numerator = my_math_module.pow(x_k - mean_x, 2)
-        denominator = my_math_module.distance_with_mean(list_x, mean_x)
+        numerator_of_part2 = my_math_module.pow(x_k - mean_x, 2)
+        denominator_of_part2 = my_math_module.calculate_distance_with_mean(list_x, mean_x)
         part_1 = student_val*std_dev
-        part_2 = math.sqrt(numerator/denominator + 1 + 1/len(list_x))
+        part_2 = math.sqrt(numerator_of_part2/denominator_of_part2 + 1 + 1/len(list_x))
         return part_1*part_2
 
     @staticmethod
-    def get_bounds_interval(interval, y_k):
+    def calculate_bounds_interval(interval, y_k):
         """ Calcul les limite de l'intervalle. """
         return [y_k + interval, y_k - interval]

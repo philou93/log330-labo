@@ -21,7 +21,7 @@ def test_CT19():
     xk = 1119
     slope = mmm.calculate_slope(numbers)
     const = mmm.calculate_const(numbers, slope)
-    variance = mmm.variance_with_regression(numbers, slope, const)
+    variance = mmm.calculate_variance_with_regression(numbers, slope, const)
     std_dev = mmm.std_derivation(variance)
     student_val = 1.860
     assert mmm.calculate_interval(xk, numbers, std_dev, student_val) > 439.545323
@@ -31,7 +31,7 @@ def test_CT20():
     xk = 1119
     slope = mmm.calculate_slope(numbers)
     const = mmm.calculate_const(numbers, slope)
-    variance = mmm.variance_with_regression(numbers, slope, const)
+    variance = mmm.calculate_variance_with_regression(numbers, slope, const)
     std_dev = mmm.std_derivation(variance)
     student_val = 1.860
     assert mmm.calculate_interval(xk, numbers, std_dev, student_val) < 439.5455325
@@ -42,7 +42,7 @@ def test_CT21():
         xk = 1119
         slope = mmm.calculate_slope(numbers)
         const = mmm.calculate_const(numbers, slope)
-        variance = mmm.variance_with_regression(numbers, slope, const)
+        variance = mmm.calculate_variance_with_regression(numbers, slope, const)
         std_dev = mmm.std_derivation(variance)
         student_val = 1.860
         mmm.calculate_interval(xk, numbers, std_dev, student_val) < 439.5455325
